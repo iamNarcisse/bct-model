@@ -6,7 +6,7 @@ from flask import Flask, render_template, request, url_for, jsonify
 # importing the model from soil analysis folder
 from flask_cors import CORS
 # import TS packages
-from PIL import Image
+#from PIL import Image
 # importing the necessary libraries
 from keras import backend as K
 from keras.applications import imagenet_utils
