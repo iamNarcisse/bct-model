@@ -3,6 +3,5 @@ flask_cors
 keras
 tensorflow
 numpy
-os
 vgg16
 gunicorn
