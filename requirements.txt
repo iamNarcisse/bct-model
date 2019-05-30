@@ -1,0 +1,9 @@
+flask
+flask_cors
+keras
+tensorflow
+numpy
+pickle
+os
+vgg16
+gunicorn
