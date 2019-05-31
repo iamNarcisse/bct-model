@@ -33,9 +33,9 @@ def url_error(e):
     return f" Wrong Url {e}"
 
 
-@app.route("/api", methods=["POST"])
+@app.route("/api", methods=["GET"])
 def api():
-    input_data = request.files['file'] 
+    input_data = request.data
     #parse the image value into the function Analyse
     #Analyze(input_data)
  
