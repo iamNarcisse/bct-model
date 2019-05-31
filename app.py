@@ -33,16 +33,17 @@ def url_error(e):
     return f" Wrong Url {e}"
 
 
-@app.route("/api", methods=["GET"])
+@app.route("/api", methods=["POST"])
 def api():
     input_data = request.data
+    d = request.files
     #parse the image value into the function Analyse
     #Analyze(input_data)
  
-    
+    print(d)
     print(input_data)
-    response = jsonify(input_data)
-    return response
+    #response = jsonify(input_data)
+    return "I was here"
 
 @app.route("/check")
 def check():
