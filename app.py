@@ -45,7 +45,7 @@ def api():
     #Analyze(input_data)
  
     #print(d)
-    print(input_data)
+   print(input_data)
     #response = jsonify(input_data)
    return "done"
 
