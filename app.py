@@ -35,15 +35,17 @@ def url_error(e):
 
 @app.route("/api", methods=['POST'])
 def api():
+   input_data = request.files['file']
+   print(input_data)
     #input_data = request.data
     #d = request.files
     #parse the image value into the function Analyse
     #Analyze(input_data)
  
-    print(d)
-    print(input_data)
+    #print(d)
+    #print(input_data)
     #response = jsonify(input_data)
-    return "I was here"
+    return "done"
 
 @app.route("/check")
 def check():
