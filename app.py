@@ -2,9 +2,10 @@
 #importing the module that has the function
 #from result_function import Analyze
 # importing packages from Flask
-from flask import Flask, render_template, request, url_for, jsonify
+from flask import Flask, render_template, json, request, url_for, jsonify
 # importing the model from soil analysis folder
 from flask_cors import CORS
+#from flask_restful import api
 # import TS packages
 #from PIL import Image
 # importing the necessary libraries
@@ -36,20 +37,16 @@ def url_error(e):
 @app.route("/api", methods=["POST"])
 def api():
    input_data = request.files['file']
-
-   #input_data = request.args.get("image")
-   
-    #input_data = request.data
-    #d = request.files
-    #parse the image value into the function Analyse
-    #Analyze(input_data)
- 
-    #print(d)
    print(input_data)
-    #response = jsonify(input_data)
-   return "done"
+   data = "Nariccse"
+   response = app.response_class(
+        response=json.dumps(data),
+        status=200,
+        mimetype='application/json'
+    )
+   return response
 
-@app.route("/check")
+@app.route("/analyse", methods=["POST"])
 def check():
    def Analyze(imgPath):
     # loading the necssary models
@@ -68,13 +65,13 @@ def check():
     return truth[final_result[0]]
 
 
-
+   input_d = request.files["file"]
    #name = Analyze(r"loamy.jpg")
-   name = Analyze(r"loamy.jpg")
+   name = Analyze(input_d)
    K.clear_session()
+   # print(name, "It worked")
 
-
-   return name
+   return jsonify({"data" : name})
 
 
 if __name__ == "__main__":
