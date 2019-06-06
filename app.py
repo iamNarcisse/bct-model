@@ -36,7 +36,7 @@ def url_error(e):
 
 @app.route("/api", methods=["POST"])
 def api():
-   print(request.files)
+   print(request.files["file"])
    input_data = request.files['file']
    print(input_data)
    data = "Nariccse"
