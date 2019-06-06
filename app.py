@@ -36,7 +36,7 @@ def url_error(e):
 
 @app.route("/api", methods=["POST"])
 def api():
-   print(request.files["file"])
+ 
    input_data = request.files['file']
    print(input_data)
    data = "Nariccse"
@@ -67,7 +67,7 @@ def check():
 
 
    input_d = request.files["file"]
-   print(input_d)
+   
    #name = Analyze(r"loamy.jpg")
    name = Analyze(input_d)
    K.clear_session()

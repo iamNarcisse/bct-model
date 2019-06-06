@@ -4,4 +4,5 @@ keras
 sklearn
 tensorflow
 numpy
+pickle
 gunicorn
